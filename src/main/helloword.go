@@ -22,4 +22,8 @@ func main() {
 	practice.ModifyStudent(&student)
 	fmt.Println(student.Name)
 	fmt.Println(student.School.Name)
+
+	student.ModifySelf("KEKE", 25, "西南大学")
+	fmt.Println(student.Name)
+	fmt.Println(student.School.Name)
 }

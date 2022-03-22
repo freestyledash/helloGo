@@ -40,3 +40,10 @@ func ModifyStudent(student *Student) {
 	student.Age = 10
 	student.School.Name = "西南大学"
 }
+
+func (student *Student) ModifySelf(name string, age int, schoolname string) {
+	student.Name = name
+	student.Age = age
+	student.School.Name = schoolname
+
+}
