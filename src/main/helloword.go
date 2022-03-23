@@ -26,4 +26,21 @@ func main() {
 	student.ModifySelf("KEKE", 25, "西南大学")
 	fmt.Println(student.Name)
 	fmt.Println(student.School.Name)
+
+	var a int64 = 10
+	var trigger bool = true
+	stringChan := make(chan string)
+	practice.HaveATest(&a, &trigger, stringChan)
+	o := 0
+	for {
+		// 从通道中取出数据, 此处会阻塞直到信道中返回数据
+		message := <-stringChan
+		// 打印数据
+		fmt.Println(message)
+		o++
+		if o >= 3 {
+			break
+		}
+	}
+	fmt.Println(a)
 }
